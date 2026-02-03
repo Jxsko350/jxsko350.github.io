@@ -39,12 +39,13 @@
       width: 100%;
       height: auto;
       object-fit: cover;
+      filter: brightness(0.4); /* assombrit l'image pour le texte */
     }
 
     .content, .resume-item, .info-item, .form-control, button {
       background-color: #2a2a2a; /* encadrés gris foncé */
       color: #fff;
-      border: 1px solid #fff;
+      border: none; /* plus de contours blancs pour simplifier */
       padding: 15px;
       border-radius: 5px;
     }
@@ -60,7 +61,7 @@
     button {
       background-color: #2a2a2a;
       color: #fff;
-      border: 1px solid #fff;
+      border: none;
       padding: 10px 20px;
       cursor: pointer;
     }
@@ -106,6 +107,7 @@
       <ul>
         <li><a href="#hero" class="active"><span>Accueil</span></a></li>
         <li><a href="#about"><span>À propos</span></a></li>
+        <li><a href="#skills"><span>Compétences</span></a></li>
         <li><a href="#resume"><span>CV</span></a></li>
         <li><a href="#contact"><span>Contact</span></a></li>
       </ul>
@@ -152,6 +154,42 @@
                   <li><strong>Email :</strong> Jackson77350@gmail.com</li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Compétences</h2>
+        <p>Compétences acquises en fin de BTS SIO SISR :</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="content">
+              <h4>Réseau & Infrastructure</h4>
+              <ul>
+                <li>Configuration et administration de réseaux (LAN/WAN)</li>
+                <li>Gestion des serveurs Windows et Linux</li>
+                <li>Installation et administration de VM (VirtualBox, VMware)</li>
+                <li>Supervision réseau et sécurité (firewall, VPN)</li>
+                <li>Câblage et topologies réseau</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="content">
+              <h4>Services & Déploiement</h4>
+              <ul>
+                <li>Gestion des services réseaux (DHCP, DNS, FTP, HTTP)</li>
+                <li>Administration de postes clients</li>
+                <li>Maintenance et dépannage informatique</li>
+                <li>Gestion de parc informatique et documentation</li>
+                <li>Plan de reprise et sauvegardes (backup)</li>
+              </ul>
             </div>
           </div>
         </div>
