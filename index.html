@@ -18,8 +18,8 @@
 
   <style>
     body {
-      background-color: #000; /* fond noir */
-      color: #f0f0f0; /* texte gris clair */
+      background-color: #000; /* fond sombre */
+      color: #fff; /* texte blanc */
     }
 
     h2, h3, h4, h5 {
@@ -27,12 +27,12 @@
     }
 
     a {
-      color: #ccc; /* liens gris clair */
+      color: #fff;
       text-decoration: none;
     }
 
     a:hover {
-      color: #fff;
+      color: #ddd;
     }
 
     .hero img {
@@ -41,35 +41,37 @@
       object-fit: cover;
     }
 
-    .content p, .resume-item ul li {
-      color: #e0e0e0;
+    .content, .resume-item, .info-item, .form-control, button {
+      background-color: #111; /* encadrés sombres */
+      color: #fff; /* texte blanc */
+      border: 1px solid #fff; /* contour blanc pour encadrés */
+      padding: 15px;
+      border-radius: 5px;
     }
 
-    .form-control {
-      background-color: #222;
-      color: #f0f0f0;
-      border: 1px solid #555;
+    .content p, .resume-item ul li, .info-item p {
+      color: #fff;
     }
 
     .form-control::placeholder {
-      color: #aaa;
+      color: #ccc;
     }
 
     button {
-      background-color: #f0f0f0;
-      color: #000;
-      border: none;
+      background-color: #111;
+      color: #fff;
+      border: 1px solid #fff;
       padding: 10px 20px;
       cursor: pointer;
     }
 
     button:hover {
-      background-color: #fff;
+      background-color: #333;
     }
 
     footer {
       background-color: #111;
-      color: #ccc;
+      color: #fff;
     }
 
     section {
@@ -113,7 +115,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/IMG_1578.jpeg" class="img-fluid" alt="Photo Jackson Nsimba">
+            <div class="content"><img src="assets/img/IMG_1578.jpeg" class="img-fluid" alt="Photo Jackson Nsimba"></div>
           </div>
           <div class="col-lg-8 content">
             <h2>Étudiant en BTS SIO</h2>
@@ -173,7 +175,7 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4>Stage de 3ème</h4>
+              <h4>Stage de 3ème à Spie Batignolles</h4>
               <h5>2021</h5>
               <ul>
                 <li>Découverte du fonctionnement d’une entreprise BTP</li>
@@ -193,17 +195,15 @@
       </div>
       <div class="container" data-aos="fade" data-aos-delay="100">
         <div class="row gy-4">
-          <div class="col-lg-4">
-            <div>
-              <h3>Adresse</h3>
-              <p>Le Mée-Sur-Seine, France</p>
-              <h3>Téléphone</h3>
-              <p>0753446569</p>
-              <h3>Email</h3>
-              <p>Jackson77350@gmail.com</p>
-            </div>
+          <div class="col-lg-4 content">
+            <h3>Adresse</h3>
+            <p>Le Mée-Sur-Seine, France</p>
+            <h3>Téléphone</h3>
+            <p>0753446569</p>
+            <h3>Email</h3>
+            <p>Jackson77350@gmail.com</p>
           </div>
-          <div class="col-lg-8">
+          <div class="col-lg-8 content">
             <form action="forms/contact.php" method="post" class="php-email-form">
               <div class="row gy-4">
                 <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Nom" required></div>
@@ -233,7 +233,6 @@
     </div>
   </footer>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
