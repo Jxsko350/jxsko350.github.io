@@ -28,10 +28,10 @@
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body class="index-page text-dark">
 
   <!-- Header -->
-  <header id="header" class="header d-flex flex-column justify-content-center">
+  <header id="header" class="header d-flex flex-column justify-content-center text-dark">
     <i class="header-toggle d-xl-none bi bi-list"></i>
     <nav id="navmenu" class="navmenu">
       <ul>
@@ -48,13 +48,13 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-      <img src="assets/img/hero-bg.jpg" alt="">
+    <section id="hero" class="hero section bg-light text-dark">
+      <img src="assets/img/hero-bg.jpg" class="img-fluid" alt="Photo de fond">
       <div class="container" data-aos="zoom-out">
         <div class="row justify-content-center">
           <div class="col-lg-9 text-center">
             <h2>Jackson Nsimba</h2>
-            <p>Je suis <span class="typed" data-typed-items="étudiant en BTS SIO">étudiant en BTS SIO</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <p>Je suis <span class="typed" data-typed-items="étudiant en BTS SIO">étudiant en BTS SIO</span></p>
             <div class="social-links">
               <a href="#"><i class="bi bi-twitter"></i></a>
               <a href="#"><i class="bi bi-facebook"></i></a>
@@ -67,16 +67,15 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="about section bg-light text-dark">
       <div class="container section-title" data-aos="fade-up">
         <h2>À propos de moi</h2>
-        <p>Je suis étudiant en première année de BTS SIO, à la recherche d’un stage. Sérieux, motivé et organisé, je m’investis pleinement dans mon travail et j’aime apprendre de nouvelles compétences. Je sais travailler aussi bien en autonomie qu’en équipe et je fais preuve d’adaptation et de rigueur.</p>
+        <p>Étudiant en première année de BTS SIO, à la recherche d’un stage. Sérieux, motivé et organisé, je m’investis pleinement dans mon travail et j’aime apprendre de nouvelles compétences. Je sais travailler aussi bien en autonomie qu’en équipe et je fais preuve d’adaptation et de rigueur.</p>
       </div>
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="Photo Jackson Nsimba">
           </div>
           <div class="col-lg-8 content">
             <h2>Étudiant en BTS SIO</h2>
@@ -103,7 +102,7 @@
     </section>
 
     <!-- Compétences Réseau -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="skills section bg-light text-dark">
       <div class="container section-title" data-aos="fade-up">
         <h2>Compétences Réseau</h2>
         <p>Compétences acquises en première année de BTS SIO :</p>
@@ -127,12 +126,11 @@
     </section>
 
     <!-- CV Section -->
-    <section id="resume" class="resume section">
+    <section id="resume" class="resume section bg-light text-dark">
       <div class="container section-title" data-aos="fade-up">
         <h2>CV</h2>
         <p>Résumé de mon parcours et de mes compétences.</p>
       </div>
-
       <div class="container">
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -208,7 +206,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section bg-light text-dark">
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Pour toute demande ou stage, vous pouvez me contacter.</p>
@@ -261,7 +259,7 @@
   </main>
 
   <!-- Footer -->
-  <footer id="footer" class="footer position-relative light-background">
+  <footer id="footer" class="footer bg-light text-dark">
     <div class="container text-center">
       <h3 class="sitename">Jackson Nsimba</h3>
       <p>Étudiant en BTS SIO, passionné par les réseaux et l’informatique.</p>
@@ -289,6 +287,10 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 
 </body>
 </html>
