@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
   <title>CV - Jackson Nsimba</title>
 
   <!-- Vendor CSS Files -->
@@ -16,221 +17,588 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+
   <style>
-    body {
-      background-color: #1a1a1a;
-      color: #fff;
+
+    /* =========================================================
+       COULEURS GÉNÉRALES
+    ========================================================= */
+
+    :root {
+      --background-dark: #111111;
+      --background-card: #1e1e1e;
+      --background-card-hover: #292929;
+
+      --text-white: #ffffff;
+      --text-light: #f1f1f1;
+      --text-gray: #d0d0d0;
+      --text-muted: #b5b5b5;
+
+      --border-color: #3a3a3a;
+
+      --button: #2563eb;
+      --button-hover: #1d4ed8;
+
+      --icon-background: #252525;
     }
 
-    h2, h3, h4, h5 {
-      color: #fff !important;
+
+    /* =========================================================
+       BODY
+    ========================================================= */
+
+    html {
+      scroll-behavior: smooth;
     }
+
+    body {
+      background-color: var(--background-dark) !important;
+      color: var(--text-white) !important;
+    }
+
+
+    /* =========================================================
+       TEXTES
+    ========================================================= */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--text-white) !important;
+    }
+
+    p {
+      color: var(--text-gray) !important;
+    }
+
+    strong {
+      color: var(--text-white) !important;
+    }
+
+    em {
+      color: var(--text-gray) !important;
+    }
+
+    li {
+      color: var(--text-gray) !important;
+    }
+
+
+    /* =========================================================
+       LIENS
+    ========================================================= */
 
     a {
-      color: #fff !important;
+      color: var(--text-white) !important;
       text-decoration: none;
     }
 
     a:hover {
-      color: #ddd !important;
+      color: #60a5fa !important;
+    }
+
+
+    /* =========================================================
+       SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 70px 0;
+      background-color: var(--background-dark);
+    }
+
+    .section-title h2 {
+      color: var(--text-white) !important;
+    }
+
+    .section-title p {
+      color: var(--text-gray) !important;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
-      filter: brightness(0.4);
+      filter: brightness(0.35);
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
 
-    .content,
-    .resume-item,
-    .info-item,
-    .form-control,
-    button {
-      background-color: #2a2a2a;
-      color: #fff;
-      border: none;
-      padding: 15px;
-      border-radius: 5px;
+    .hero .container {
+      position: relative;
+      z-index: 1;
     }
 
-    .content p,
-    .resume-item ul li,
-    .resume-item p,
-    .info-item p {
-      color: #fff;
+    .hero h2 {
+      color: #ffffff !important;
+      font-size: 48px;
+      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     }
 
-    .form-control::placeholder {
-      color: #ccc;
+    .hero p {
+      color: #ffffff !important;
+      font-size: 22px;
+      margin-top: 15px;
     }
 
-    button {
-      background-color: #2a2a2a;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
+    .hero .typed {
+      color: #60a5fa !important;
+      font-weight: 600;
     }
 
-    button:hover {
-      background-color: #333;
+
+    /* =========================================================
+       CARTES / CONTENT
+    ========================================================= */
+
+    .content {
+      background-color: var(--background-card) !important;
+      color: var(--text-white) !important;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 25px;
     }
 
-    footer {
-      background-color: #2a2a2a;
-      color: #fff;
+    .content h2,
+    .content h3,
+    .content h4,
+    .content h5 {
+      color: var(--text-white) !important;
     }
 
-    section {
-      padding: 60px 0;
+    .content p {
+      color: var(--text-gray) !important;
     }
 
-    /* Forcer le blanc partout */
-    .content,
-    .resume-item,
-    .info-item,
-    .form-control,
-    .resume-item ul li,
-    .resume-item p,
-    .resume-item h4,
+    .content li {
+      color: var(--text-gray) !important;
+      margin-bottom: 10px;
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about .content img {
+      border-radius: 10px;
+    }
+
+    .about ul {
+      padding-left: 20px;
+    }
+
+    .about li {
+      margin-bottom: 12px;
+    }
+
+    .about li strong {
+      color: #ffffff !important;
+    }
+
+    .about li a {
+      color: #60a5fa !important;
+    }
+
+    .about li a:hover {
+      color: #93c5fd !important;
+    }
+
+
+    /* =========================================================
+       COMPÉTENCES
+    ========================================================= */
+
+    .skills .content {
+      height: 100%;
+      transition: 0.3s ease;
+    }
+
+    .skills .content:hover {
+      background-color: var(--background-card-hover) !important;
+      transform: translateY(-5px);
+      border-color: #4b5563;
+    }
+
+    .skills h4 {
+      color: #ffffff !important;
+      margin-bottom: 20px;
+    }
+
+    .skills ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .skills li {
+      color: #d0d0d0 !important;
+      margin-bottom: 12px;
+    }
+
+
+    /* =========================================================
+       PARCOURS / CV
+    ========================================================= */
+
+    .resume-item {
+      background-color: var(--background-card) !important;
+      color: var(--text-white) !important;
+
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+
+      padding: 25px;
+      margin-bottom: 20px;
+
+      transition: 0.3s ease;
+    }
+
+    .resume-item:hover {
+      background-color: var(--background-card-hover) !important;
+      transform: translateY(-3px);
+    }
+
+    .resume-item h4 {
+      color: #ffffff !important;
+      font-size: 20px;
+    }
+
     .resume-item h5 {
-      color: #fff !important;
+      color: #60a5fa !important;
+      font-size: 15px;
+      margin: 10px 0;
     }
 
-    h2, h3, h4, h5 {
-      color: #fff !important;
+    .resume-item p {
+      color: #d0d0d0 !important;
     }
 
-    a {
-      color: #fff !important;
+    .resume-item em {
+      color: #d0d0d0 !important;
+    }
+
+    .resume-item ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .resume-item li {
+      color: #d0d0d0 !important;
+      margin-bottom: 8px;
+    }
+
+
+    /* =========================================================
+       CERTIFICATIONS
+    ========================================================= */
+
+    #acquisitions .resume-item {
+      min-height: 100px;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact .content {
+      height: 100%;
+    }
+
+    .contact .content h3 {
+      color: #ffffff !important;
+      font-size: 20px;
+      margin-top: 5px;
+      margin-bottom: 8px;
+    }
+
+    .contact .content p {
+      color: #d0d0d0 !important;
+      margin-bottom: 25px;
+    }
+
+
+    /* =========================================================
+       FORMULAIRE
+    ========================================================= */
+
+    .form-control {
+      background-color: #1e1e1e !important;
+      color: #ffffff !important;
+
+      border: 1px solid #444444 !important;
+      border-radius: 8px;
+
+      padding: 13px 15px;
+    }
+
+    .form-control:focus {
+      background-color: #242424 !important;
+      color: #ffffff !important;
+
+      border-color: #60a5fa !important;
+
+      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15) !important;
     }
 
     .form-control::placeholder {
-      color: #ccc;
+      color: #a8a8a8 !important;
+      opacity: 1;
     }
 
-    /* Boutons */
-    .btn-download {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: #1f2937;
-      color: #fff !important;
-      padding: 14px 28px;
+    textarea.form-control {
+      resize: vertical;
+    }
+
+
+    /* =========================================================
+       BOUTON ENVOYER
+    ========================================================= */
+
+    button[type="submit"] {
+      background-color: var(--button) !important;
+      color: #ffffff !important;
+
+      border: none !important;
       border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
+
+      padding: 12px 28px;
+
+      font-weight: 600;
+      cursor: pointer;
+
+      transition: 0.3s ease;
     }
 
-    .btn-download:hover {
-      background-color: #111827;
-      color: #fff !important;
+    button[type="submit"]:hover {
+      background-color: var(--button-hover) !important;
       transform: translateY(-2px);
     }
 
-    /* ==============================
+
+    /* =========================================================
        DOCUMENTS & CV
-    ============================== */
+    ========================================================= */
 
     .documents {
+      background-color: #111111;
       padding: 80px 0;
     }
 
     .document-card {
       height: 100%;
-      padding: 30px 25px;
-      background-color: #2a2a2a;
+
+      background-color: #1e1e1e !important;
+
+      border: 1px solid #3a3a3a;
       border-radius: 12px;
-      transition: all 0.3s ease;
+
+      padding: 35px 25px;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 1px solid #3a3a3a;
+      justify-content: flex-start;
+
+      text-align: center;
+
+      transition: all 0.3s ease;
     }
 
     .document-card:hover {
+      background-color: #292929 !important;
+
+      border-color: #4b5563;
+
       transform: translateY(-8px);
-      background-color: #333;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     }
 
     .document-card h4 {
-      margin: 18px 0 12px;
-      color: #fff !important;
+      color: #ffffff !important;
+
+      font-size: 20px;
+
+      margin-top: 20px;
+      margin-bottom: 15px;
     }
 
     .document-card p {
-      color: #ddd !important;
-      line-height: 1.6;
+      color: #d0d0d0 !important;
+
+      line-height: 1.7;
+
       flex-grow: 1;
+
       margin-bottom: 0;
     }
+
+
+    /* =========================================================
+       ICÔNES DES DOCUMENTS
+    ========================================================= */
 
     .document-icon {
       width: 70px;
       height: 70px;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #1f2937;
+
+      background-color: #252525;
+
+      border: 1px solid #444444;
+
       border-radius: 50%;
+
       font-size: 30px;
-      color: #fff;
+
+      color: #60a5fa !important;
     }
 
-    .document-card .btn-download {
+
+    /* =========================================================
+       BOUTONS DOCUMENTS
+    ========================================================= */
+
+    .btn-download {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
       margin-top: 25px;
-    }
 
-    /* Bouton principal du CV */
-    .cv-main-button {
-      display: inline-block;
-      background-color: #1f2937;
-      color: #fff !important;
-      padding: 15px 30px;
+      background-color: #2563eb !important;
+
+      color: #ffffff !important;
+
+      padding: 13px 22px;
+
       border-radius: 8px;
-      font-weight: bold;
-      font-size: 16px;
-      transition: 0.3s;
-      margin-top: 10px;
+
+      font-weight: 600;
+
+      text-decoration: none !important;
+
+      transition: all 0.3s ease;
     }
 
-    .cv-main-button:hover {
-      background-color: #111827;
-      transform: scale(1.03);
+    .btn-download:hover {
+      background-color: #1d4ed8 !important;
+
+      color: #ffffff !important;
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
     }
 
-    /* Texte du menu */
-    .navmenu a span {
-      color: #fff;
-    }
 
-    /* Footer */
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
     footer {
-      padding: 30px 0;
-      margin-top: 20px;
+      background-color: #1a1a1a !important;
+
+      border-top: 1px solid #333333;
+
+      color: #ffffff !important;
+
+      padding: 35px 0;
+
+      margin-top: 0;
     }
 
     footer p {
-      color: #ddd;
-      margin-bottom: 8px;
+      color: #d0d0d0 !important;
+      margin-bottom: 10px;
     }
 
     footer .copyright {
-      color: #aaa;
+      color: #999999 !important;
     }
+
+
+    /* =========================================================
+       MENU
+    ========================================================= */
+
+    .navmenu a span {
+      color: #ffffff !important;
+    }
+
+    .navmenu a:hover span {
+      color: #60a5fa !important;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 768px) {
+
+      .hero h2 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .document-card {
+        margin-bottom: 10px;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- Header -->
+
+  <!-- =========================================================
+       HEADER
+  ========================================================= -->
+
   <header id="header" class="header d-flex flex-column justify-content-center">
 
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
     <nav id="navmenu" class="navmenu">
+
       <ul>
 
         <li>
@@ -276,29 +644,46 @@
         </li>
 
       </ul>
+
     </nav>
+
   </header>
+
+
+  <!-- =========================================================
+       MAIN
+  ========================================================= -->
 
   <main class="main">
 
-    <!-- ==============================
+
+    <!-- =======================================================
          HERO
-    ============================== -->
+    ======================================================== -->
 
     <section id="hero" class="hero section">
 
-      <img src="assets/img/1469.jpg" alt="Photo de fond">
+      <img
+        src="assets/img/1469.jpg"
+        alt="Photo de fond">
 
-      <div class="container text-center" data-aos="zoom-out">
+      <div
+        class="container text-center"
+        data-aos="zoom-out">
 
-        <h2>Jackson Nsimba</h2>
+        <h2>
+          Jackson Nsimba
+        </h2>
 
         <p>
+
           Je suis
+
           <span
             class="typed"
             data-typed-items="étudiant en BTS SIO, étudiant en BTS SIO SISR, passionné par les réseaux">
           </span>
+
         </p>
 
       </div>
@@ -306,30 +691,43 @@
     </section>
 
 
-    <!-- ==============================
-         ABOUT
-    ============================== -->
+    <!-- =======================================================
+         À PROPOS
+    ======================================================== -->
 
     <section id="about" class="about section">
 
-      <div class="container section-title" data-aos="fade-up">
+      <div
+        class="container section-title"
+        data-aos="fade-up">
 
-        <h2>À propos de moi</h2>
+        <h2>
+          À propos de moi
+        </h2>
 
         <p>
-          Étudiant en deuxième année de BTS SIO option SISR, je suis à la recherche
-          d’un stage afin de mettre en pratique mes compétences dans le domaine
-          des systèmes et réseaux. Sérieux, motivé et organisé, je m’investis
-          pleinement dans mon travail et j’aime apprendre de nouvelles compétences.
-          Je sais travailler aussi bien en autonomie qu’en équipe et je fais preuve
-          d’adaptation et de rigueur.
+          Étudiant en deuxième année de BTS SIO option SISR,
+          je suis à la recherche d’un stage afin de mettre en
+          pratique mes compétences dans le domaine des systèmes
+          et réseaux. Sérieux, motivé et organisé, je m’investis
+          pleinement dans mon travail et j’aime apprendre de
+          nouvelles compétences. Je sais travailler aussi bien
+          en autonomie qu’en équipe et je fais preuve d’adaptation
+          et de rigueur.
         </p>
 
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div
+        class="container"
+        data-aos="fade-up"
+        data-aos-delay="100">
 
         <div class="row gy-4 justify-content-center">
+
+
+          <!-- PHOTO -->
 
           <div class="col-lg-4">
 
@@ -344,17 +742,26 @@
 
           </div>
 
+
+          <!-- INFORMATIONS -->
+
           <div class="col-lg-8 content">
 
-            <h2>Étudiant en BTS SIO SISR</h2>
+            <h2>
+              Étudiant en BTS SIO SISR
+            </h2>
 
             <p class="fst-italic py-3">
-              Curieux et motivé, je m'investis dans mes études afin de développer
-              des compétences solides en systèmes, réseaux et administration
-              informatique.
+
+              Curieux et motivé, je m'investis dans mes études
+              afin de développer des compétences solides en
+              systèmes, réseaux et administration informatique.
+
             </p>
 
+
             <div class="row">
+
 
               <div class="col-lg-6">
 
@@ -367,9 +774,15 @@
 
                   <li>
                     <strong>Site internet :</strong>
-                    <a href="https://jxsko350.github.io/" target="_blank">
+
+                    <a
+                      href="https://jxsko350.github.io/"
+                      target="_blank">
+
                       Mon portfolio
+
                     </a>
+
                   </li>
 
                   <li>
@@ -385,6 +798,7 @@
                 </ul>
 
               </div>
+
 
               <div class="col-lg-6">
 
@@ -404,6 +818,7 @@
 
               </div>
 
+
             </div>
 
           </div>
@@ -415,15 +830,19 @@
     </section>
 
 
-    <!-- ==============================
-         SKILLS
-    ============================== -->
+    <!-- =======================================================
+         COMPÉTENCES
+    ======================================================== -->
 
     <section id="skills" class="skills section">
 
-      <div class="container section-title" data-aos="fade-up">
+      <div
+        class="container section-title"
+        data-aos="fade-up">
 
-        <h2>Compétences</h2>
+        <h2>
+          Compétences
+        </h2>
 
         <p>
           Compétences acquises durant ma formation en BTS SIO SISR :
@@ -431,16 +850,24 @@
 
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div
+        class="container"
+        data-aos="fade-up"
+        data-aos-delay="100">
 
         <div class="row gy-4">
 
-          <!-- Réseau -->
+
+          <!-- RÉSEAUX -->
+
           <div class="col-lg-6">
 
             <div class="content">
 
-              <h4>Réseau & Infrastructure</h4>
+              <h4>
+                Réseau & Infrastructure
+              </h4>
 
               <ul>
 
@@ -476,12 +903,15 @@
           </div>
 
 
-          <!-- Services -->
+          <!-- SERVICES -->
+
           <div class="col-lg-6">
 
             <div class="content">
 
-              <h4>Services & Déploiement</h4>
+              <h4>
+                Services & Déploiement
+              </h4>
 
               <ul>
 
@@ -522,15 +952,19 @@
     </section>
 
 
-    <!-- ==============================
+    <!-- =======================================================
          PARCOURS
-    ============================== -->
+    ======================================================== -->
 
     <section id="resume" class="resume section">
 
-      <div class="container section-title" data-aos="fade-up">
+      <div
+        class="container section-title"
+        data-aos="fade-up">
 
-        <h2>Parcours</h2>
+        <h2>
+          Parcours
+        </h2>
 
         <p>
           Résumé de mon parcours scolaire et de mes expériences.
@@ -538,23 +972,33 @@
 
       </div>
 
+
       <div class="container">
 
         <div class="row">
 
-          <!-- Éducation -->
+
+          <!-- ÉDUCATION -->
+
           <div
             class="col-lg-6"
             data-aos="fade-up"
             data-aos-delay="100">
 
-            <h3>Éducation</h3>
+            <h3>
+              Éducation
+            </h3>
+
 
             <div class="resume-item">
 
-              <h4>BTS SIO – 2ᵉ année</h4>
+              <h4>
+                BTS SIO – 2ᵉ année
+              </h4>
 
-              <h5>2026 - 2027</h5>
+              <h5>
+                2026 - 2027
+              </h5>
 
               <p>
                 <em>
@@ -563,7 +1007,8 @@
               </p>
 
               <p>
-                Option SISR – Solutions d'Infrastructure, Systèmes et Réseaux.
+                Option SISR – Solutions d'Infrastructure,
+                Systèmes et Réseaux.
               </p>
 
             </div>
@@ -571,9 +1016,13 @@
 
             <div class="resume-item">
 
-              <h4>BTS SIO – 1ʳᵉ année</h4>
+              <h4>
+                BTS SIO – 1ʳᵉ année
+              </h4>
 
-              <h5>2025 - 2026</h5>
+              <h5>
+                2025 - 2026
+              </h5>
 
               <p>
                 <em>
@@ -586,9 +1035,13 @@
 
             <div class="resume-item">
 
-              <h4>Baccalauréat Général</h4>
+              <h4>
+                Baccalauréat Général
+              </h4>
 
-              <h5>2024 - 2025</h5>
+              <h5>
+                2024 - 2025
+              </h5>
 
               <p>
                 <em>
@@ -605,28 +1058,38 @@
           </div>
 
 
-          <!-- Expériences -->
+          <!-- EXPÉRIENCES -->
+
           <div
             class="col-lg-6"
             data-aos="fade-up"
             data-aos-delay="200">
 
-            <h3>Expériences Professionnelles</h3>
+            <h3>
+              Expériences Professionnelles
+            </h3>
+
 
             <div class="resume-item">
 
-              <h4>Babysitting</h4>
+              <h4>
+                Babysitting
+              </h4>
 
-              <h5>2023 - Présent</h5>
+              <h5>
+                2023 - Présent
+              </h5>
 
               <ul>
 
                 <li>
-                  Garde d’enfants et organisation d’activités éducatives
+                  Garde d’enfants et organisation
+                  d’activités éducatives
                 </li>
 
                 <li>
-                  Assurer la sécurité et le bien-être des enfants
+                  Assurer la sécurité et le bien-être
+                  des enfants
                 </li>
 
                 <li>
@@ -644,18 +1107,24 @@
 
             <div class="resume-item">
 
-              <h4>Stage de 3ᵉ</h4>
+              <h4>
+                Stage de 3ᵉ
+              </h4>
 
-              <h5>2021</h5>
+              <h5>
+                2021
+              </h5>
 
               <ul>
 
                 <li>
-                  Découverte du fonctionnement d’une entreprise du BTP
+                  Découverte du fonctionnement
+                  d’une entreprise du BTP
                 </li>
 
                 <li>
-                  Observation des équipes et des méthodes de travail
+                  Observation des équipes et des
+                  méthodes de travail
                 </li>
 
               </ul>
@@ -671,15 +1140,21 @@
     </section>
 
 
-    <!-- ==============================
+    <!-- =======================================================
          CERTIFICATIONS
-    ============================== -->
+    ======================================================== -->
 
-    <section id="acquisitions" class="resume section">
+    <section
+      id="acquisitions"
+      class="resume section">
 
-      <div class="container section-title" data-aos="fade-up">
+      <div
+        class="container section-title"
+        data-aos="fade-up">
 
-        <h2>Acquisitions & Certifications</h2>
+        <h2>
+          Acquisitions & Certifications
+        </h2>
 
         <p>
           Certifications et acquis importants.
@@ -687,26 +1162,39 @@
 
       </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div
+        class="container"
+        data-aos="fade-up"
+        data-aos-delay="100">
 
         <div class="row gy-4">
+
 
           <div class="col-lg-6">
 
             <div class="resume-item">
 
-              <h4>ASSR2</h4>
+              <h4>
+                ASSR2
+              </h4>
 
-              <h5>2021</h5>
+              <h5>
+                2021
+              </h5>
 
             </div>
 
 
             <div class="resume-item">
 
-              <h4>Brevet des collèges</h4>
+              <h4>
+                Brevet des collèges
+              </h4>
 
-              <h5>2022</h5>
+              <h5>
+                2022
+              </h5>
 
             </div>
 
@@ -717,27 +1205,39 @@
 
             <div class="resume-item">
 
-              <h4>Baccalauréat Général</h4>
+              <h4>
+                Baccalauréat Général
+              </h4>
 
-              <h5>2025</h5>
-
-            </div>
-
-
-            <div class="resume-item">
-
-              <h4>Code de la route & Permis B</h4>
-
-              <h5>2025</h5>
+              <h5>
+                2025
+              </h5>
 
             </div>
 
 
             <div class="resume-item">
 
-              <h4>Certification PIX</h4>
+              <h4>
+                Code de la route & Permis B
+              </h4>
 
-              <h5>2025</h5>
+              <h5>
+                2025
+              </h5>
+
+            </div>
+
+
+            <div class="resume-item">
+
+              <h4>
+                Certification PIX
+              </h4>
+
+              <h5>
+                2025
+              </h5>
 
             </div>
 
@@ -750,22 +1250,27 @@
     </section>
 
 
-    <!-- ==============================
+    <!-- =======================================================
          CONTACT
-    ============================== -->
+    ======================================================== -->
 
     <section id="contact" class="contact section">
 
-      <div class="container section-title" data-aos="fade-up">
+      <div
+        class="container section-title"
+        data-aos="fade-up">
 
-        <h2>Contact</h2>
+        <h2>
+          Contact
+        </h2>
 
         <p>
-          N'hésitez pas à me contacter pour toute demande concernant
-          ma recherche de stage.
+          N'hésitez pas à me contacter pour toute demande
+          concernant ma recherche de stage.
         </p>
 
       </div>
+
 
       <div
         class="container"
@@ -774,98 +1279,119 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4 content">
 
-            <h3>Adresse</h3>
+          <!-- COORDONNÉES -->
 
-            <p>
-              Le Mée-Sur-Seine, France
-            </p>
+          <div class="col-lg-4">
 
-            <h3>Téléphone</h3>
+            <div class="content">
 
-            <p>
-              0753446569
-            </p>
+              <h3>
+                Adresse
+              </h3>
 
-            <h3>Email</h3>
+              <p>
+                Le Mée-Sur-Seine, France
+              </p>
 
-            <p>
-              Jackson77350@gmail.com
-            </p>
+
+              <h3>
+                Téléphone
+              </h3>
+
+              <p>
+                0753446569
+              </p>
+
+
+              <h3>
+                Email
+              </h3>
+
+              <p>
+                Jackson77350@gmail.com
+              </p>
+
+            </div>
 
           </div>
 
 
-          <div class="col-lg-8 content">
+          <!-- FORMULAIRE -->
 
-            <form
-              action="forms/contact.php"
-              method="post"
-              class="php-email-form">
+          <div class="col-lg-8">
 
-              <div class="row gy-4">
+            <div class="content">
 
-                <div class="col-md-6">
+              <form
+                action="forms/contact.php"
+                method="post"
+                class="php-email-form">
 
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-control"
-                    placeholder="Nom"
-                    required>
+                <div class="row gy-4">
+
+
+                  <div class="col-md-6">
+
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      placeholder="Nom"
+                      required>
+
+                  </div>
+
+
+                  <div class="col-md-6">
+
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      placeholder="Email"
+                      required>
+
+                  </div>
+
+
+                  <div class="col-md-12">
+
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      placeholder="Objet"
+                      required>
+
+                  </div>
+
+
+                  <div class="col-md-12">
+
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="6"
+                      placeholder="Message"
+                      required></textarea>
+
+                  </div>
+
+
+                  <div class="col-md-12 text-center">
+
+                    <button type="submit">
+                      Envoyer
+                    </button>
+
+                  </div>
 
                 </div>
 
+              </form>
 
-                <div class="col-md-6">
-
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    placeholder="Email"
-                    required>
-
-                </div>
-
-
-                <div class="col-md-12">
-
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="subject"
-                    placeholder="Objet"
-                    required>
-
-                </div>
-
-
-                <div class="col-md-12">
-
-                  <textarea
-                    class="form-control"
-                    name="message"
-                    rows="6"
-                    placeholder="Message"
-                    required>
-                  </textarea>
-
-                </div>
-
-
-                <div class="col-md-12 text-center">
-
-                  <button type="submit">
-                    Envoyer
-                  </button>
-
-                </div>
-
-              </div>
-
-            </form>
+            </div>
 
           </div>
 
@@ -876,19 +1402,26 @@
     </section>
 
 
-    <!-- ==============================
+    <!-- =======================================================
          DOCUMENTS & CV
-    ============================== -->
+    ======================================================== -->
 
-    <section id="documents" class="documents section">
+    <section
+      id="documents"
+      class="documents section">
 
-      <div class="container section-title" data-aos="fade-up">
 
-        <h2>Documents & CV</h2>
+      <div
+        class="container section-title"
+        data-aos="fade-up">
+
+        <h2>
+          Documents & CV
+        </h2>
 
         <p>
-          Retrouvez ici mon CV ainsi que quelques travaux réalisés
-          durant ma formation en BTS SIO.
+          Retrouvez ici mon CV ainsi que quelques travaux
+          réalisés durant ma formation en BTS SIO.
         </p>
 
       </div>
@@ -902,10 +1435,13 @@
         <div class="row gy-4 justify-content-center">
 
 
-          <!-- CV -->
+          <!-- =================================================
+               CV
+          ================================================== -->
+
           <div class="col-lg-4 col-md-6">
 
-            <div class="content text-center document-card">
+            <div class="document-card">
 
               <div class="document-icon">
 
@@ -913,19 +1449,28 @@
 
               </div>
 
-              <h4>Mon CV</h4>
+
+              <h4>
+                Mon CV
+              </h4>
+
 
               <p>
-                Consultez et téléchargez mon CV afin de découvrir
-                mon parcours, mes compétences et mes expériences.
+
+                Consultez et téléchargez mon CV afin de
+                découvrir mon parcours, mes compétences
+                et mes expériences.
+
               </p>
 
+
               <a
-                href="/assets/Cv_Jackson.pdf"
+                href="/assets/CV_Jackson.pdf"
                 target="_blank"
                 class="btn-download">
 
                 <i class="bi bi-download"></i>
+
                 Télécharger mon CV
 
               </a>
@@ -935,10 +1480,13 @@
           </div>
 
 
-          <!-- TP Configuration réseau -->
+          <!-- =================================================
+               TP RÉSEAU
+          ================================================== -->
+
           <div class="col-lg-4 col-md-6">
 
-            <div class="content text-center document-card">
+            <div class="document-card">
 
               <div class="document-icon">
 
@@ -946,12 +1494,20 @@
 
               </div>
 
-              <h4>TP Configuration réseau</h4>
+
+              <h4>
+                TP Configuration réseau
+              </h4>
+
 
               <p>
+
                 Travail pratique portant sur la configuration
-                réseau d'un serveur réalisé durant ma formation.
+                réseau d'un serveur réalisé durant ma formation
+                en BTS SIO SISR.
+
               </p>
+
 
               <a
                 href="/assets/TP-Configuration_réseau_d'un_serveur_Jackson_Nsimba_SIO11.pdf"
@@ -959,6 +1515,7 @@
                 class="btn-download">
 
                 <i class="bi bi-file-earmark-pdf"></i>
+
                 Voir le TP
 
               </a>
@@ -968,10 +1525,13 @@
           </div>
 
 
-          <!-- TP Clé bootable -->
+          <!-- =================================================
+               TP CLÉ BOOTABLE
+          ================================================== -->
+
           <div class="col-lg-4 col-md-6">
 
-            <div class="content text-center document-card">
+            <div class="document-card">
 
               <div class="document-icon">
 
@@ -979,12 +1539,19 @@
 
               </div>
 
-              <h4>TP Création d'une clé bootable</h4>
+
+              <h4>
+                TP Création d'une clé bootable
+              </h4>
+
 
               <p>
+
                 Travail pratique consacré à la création
                 et à l'utilisation d'une clé USB bootable.
+
               </p>
+
 
               <a
                 href="/assets/TP_création_d'une_clé_bootable.pdf"
@@ -992,6 +1559,7 @@
                 class="btn-download">
 
                 <i class="bi bi-file-earmark-pdf"></i>
+
                 Voir le TP
 
               </a>
@@ -1010,9 +1578,9 @@
   </main>
 
 
-  <!-- ==============================
+  <!-- =========================================================
        FOOTER
-  ============================== -->
+  ========================================================= -->
 
   <footer>
 
@@ -1022,6 +1590,7 @@
         Étudiant en BTS SIO SISR, passionné par les réseaux,
         les systèmes et l'informatique.
       </p>
+
 
       <div class="copyright mt-2">
 
@@ -1036,13 +1605,16 @@
   </footer>
 
 
-  <!-- Scripts -->
+  <!-- =========================================================
+       SCRIPTS
+  ========================================================= -->
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <script src="assets/vendor/aos/aos.js"></script>
 
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
+
 
   <script>
 
@@ -1053,7 +1625,9 @@
 
   </script>
 
+
 </body>
 
 </html>
+
 
