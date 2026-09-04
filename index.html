@@ -18,21 +18,21 @@
 
   <style>
     body {
-      background-color: #1a1a1a; /* fond gris foncé */
-      color: #fff; /* texte blanc */
+      background-color: #1a1a1a;
+      color: #fff;
     }
 
     h2, h3, h4, h5 {
-      color: #fff;
+      color: #fff !important;
     }
 
     a {
-      color: #fff;
+      color: #fff !important;
       text-decoration: none;
     }
 
     a:hover {
-      color: #ddd;
+      color: #ddd !important;
     }
 
     .hero img {
@@ -42,7 +42,11 @@
       filter: brightness(0.4);
     }
 
-    .content, .resume-item, .info-item, .form-control, button {
+    .content,
+    .resume-item,
+    .info-item,
+    .form-control,
+    button {
       background-color: #2a2a2a;
       color: #fff;
       border: none;
@@ -50,7 +54,10 @@
       border-radius: 5px;
     }
 
-    .content p, .resume-item ul li, .resume-item p, .info-item p {
+    .content p,
+    .resume-item ul li,
+    .resume-item p,
+    .info-item p {
       color: #fff;
     }
 
@@ -80,7 +87,14 @@
     }
 
     /* Forcer le blanc partout */
-    .content, .resume-item, .info-item, .form-control, .resume-item ul li, .resume-item p, .resume-item h4, .resume-item h5 {
+    .content,
+    .resume-item,
+    .info-item,
+    .form-control,
+    .resume-item ul li,
+    .resume-item p,
+    .resume-item h4,
+    .resume-item h5 {
       color: #fff !important;
     }
 
@@ -95,22 +109,117 @@
     .form-control::placeholder {
       color: #ccc;
     }
-    .btn-download {
-  display: inline-block;
-  margin-top: 20px;
-  background-color: #1f2937;
-  color: #fff;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-}
 
-.btn-download:hover {
-  background-color: #111827;
-  color: #fff;
-}
+    /* Boutons */
+    .btn-download {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #1f2937;
+      color: #fff !important;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-download:hover {
+      background-color: #111827;
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+
+    /* ==============================
+       DOCUMENTS & CV
+    ============================== */
+
+    .documents {
+      padding: 80px 0;
+    }
+
+    .document-card {
+      height: 100%;
+      padding: 30px 25px;
+      background-color: #2a2a2a;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #3a3a3a;
+    }
+
+    .document-card:hover {
+      transform: translateY(-8px);
+      background-color: #333;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .document-card h4 {
+      margin: 18px 0 12px;
+      color: #fff !important;
+    }
+
+    .document-card p {
+      color: #ddd !important;
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 0;
+    }
+
+    .document-icon {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1f2937;
+      border-radius: 50%;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    .document-card .btn-download {
+      margin-top: 25px;
+    }
+
+    /* Bouton principal du CV */
+    .cv-main-button {
+      display: inline-block;
+      background-color: #1f2937;
+      color: #fff !important;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .cv-main-button:hover {
+      background-color: #111827;
+      transform: scale(1.03);
+    }
+
+    /* Texte du menu */
+    .navmenu a span {
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      padding: 30px 0;
+      margin-top: 20px;
+    }
+
+    footer p {
+      color: #ddd;
+      margin-bottom: 8px;
+    }
+
+    footer .copyright {
+      color: #aaa;
+    }
   </style>
 </head>
 
@@ -118,257 +227,833 @@
 
   <!-- Header -->
   <header id="header" class="header d-flex flex-column justify-content-center">
+
     <i class="header-toggle d-xl-none bi bi-list"></i>
+
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><span>Accueil</span></a></li>
-        <li><a href="#about"><span>À propos</span></a></li>
-        <li><a href="#skills"><span>Compétences</span></a></li>
-        <li><a href="#resume"><span>Certifications</span></a></li>
-        <li><a href="#acquisitions"><span>Acquisitions</span></a></li>
-        <li><a href="#contact"><span>Contact</span></a></li>
+
+        <li>
+          <a href="#hero" class="active">
+            <span>Accueil</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#about">
+            <span>À propos</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills">
+            <span>Compétences</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#resume">
+            <span>Parcours</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#acquisitions">
+            <span>Certifications</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#documents">
+            <span>Documents</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#contact">
+            <span>Contact</span>
+          </a>
+        </li>
+
       </ul>
     </nav>
   </header>
 
   <main class="main">
 
-    <!-- Hero Section -->
+    <!-- ==============================
+         HERO
+    ============================== -->
+
     <section id="hero" class="hero section">
+
       <img src="assets/img/1469.jpg" alt="Photo de fond">
+
       <div class="container text-center" data-aos="zoom-out">
+
         <h2>Jackson Nsimba</h2>
-        <p>Je suis <span class="typed" data-typed-items="étudiant en BTS SIO">étudiant en BTS SIO</span></p>
+
+        <p>
+          Je suis
+          <span
+            class="typed"
+            data-typed-items="étudiant en BTS SIO, étudiant en BTS SIO SISR, passionné par les réseaux">
+          </span>
+        </p>
+
       </div>
+
     </section>
 
-    <!-- About Section -->
+
+    <!-- ==============================
+         ABOUT
+    ============================== -->
+
     <section id="about" class="about section">
+
       <div class="container section-title" data-aos="fade-up">
+
         <h2>À propos de moi</h2>
-        <p>Étudiant en première année de BTS SIO, à la recherche d’un stage. Sérieux, motivé et organisé, je m’investis pleinement dans mon travail et j’aime apprendre de nouvelles compétences. Je sais travailler aussi bien en autonomie qu’en équipe et je fais preuve d’adaptation et de rigueur.</p>
+
+        <p>
+          Étudiant en deuxième année de BTS SIO option SISR, je suis à la recherche
+          d’un stage afin de mettre en pratique mes compétences dans le domaine
+          des systèmes et réseaux. Sérieux, motivé et organisé, je m’investis
+          pleinement dans mon travail et j’aime apprendre de nouvelles compétences.
+          Je sais travailler aussi bien en autonomie qu’en équipe et je fais preuve
+          d’adaptation et de rigueur.
+        </p>
+
       </div>
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
         <div class="row gy-4 justify-content-center">
+
           <div class="col-lg-4">
-            <div class="content"><img src="assets/img/IMG_1578.jpeg" class="img-fluid" alt="Photo Jackson Nsimba"></div>
+
+            <div class="content">
+
+              <img
+                src="assets/img/IMG_1578.jpeg"
+                class="img-fluid"
+                alt="Photo Jackson Nsimba">
+
+            </div>
+
           </div>
+
           <div class="col-lg-8 content">
-            <h2>Étudiant en BTS SIO</h2>
-            <p class="fst-italic py-3">Curieux et motivé, je m'investis dans mes études afin de développer des compétences solides et utiles au monde professionnel.</p>
+
+            <h2>Étudiant en BTS SIO SISR</h2>
+
+            <p class="fst-italic py-3">
+              Curieux et motivé, je m'investis dans mes études afin de développer
+              des compétences solides en systèmes, réseaux et administration
+              informatique.
+            </p>
+
             <div class="row">
+
               <div class="col-lg-6">
+
                 <ul>
-                  <li><strong>Anniversaire :</strong> 7 Septembre 2007</li>
-                  <li><strong>Site internet :</strong> <a href="https://jxsko350.github.io/">https://jxsko350.github.io/</a></li>
-                  <li><strong>Téléphone :</strong> 0753446569</li>
-                  <li><strong>Ville :</strong> Le Mée-Sur-Seine</li>
+
+                  <li>
+                    <strong>Anniversaire :</strong>
+                    7 Septembre 2007
+                  </li>
+
+                  <li>
+                    <strong>Site internet :</strong>
+                    <a href="https://jxsko350.github.io/" target="_blank">
+                      Mon portfolio
+                    </a>
+                  </li>
+
+                  <li>
+                    <strong>Téléphone :</strong>
+                    0753446569
+                  </li>
+
+                  <li>
+                    <strong>Ville :</strong>
+                    Le Mée-Sur-Seine
+                  </li>
+
                 </ul>
+
               </div>
+
               <div class="col-lg-6">
+
                 <ul>
-                  <li><strong>Âge :</strong> 18</li>
-                  <li><strong>Email :</strong> Jackson77350@gmail.com</li>
+
+                  <li>
+                    <strong>Âge :</strong>
+                    19 ans
+                  </li>
+
+                  <li>
+                    <strong>Email :</strong>
+                    Jackson77350@gmail.com
+                  </li>
+
                 </ul>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Skills Section -->
+
+    <!-- ==============================
+         SKILLS
+    ============================== -->
+
     <section id="skills" class="skills section">
+
       <div class="container section-title" data-aos="fade-up">
+
         <h2>Compétences</h2>
-        <p>Compétences acquises :</p>
+
+        <p>
+          Compétences acquises durant ma formation en BTS SIO SISR :
+        </p>
+
       </div>
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
         <div class="row gy-4">
+
+          <!-- Réseau -->
           <div class="col-lg-6">
+
             <div class="content">
+
               <h4>Réseau & Infrastructure</h4>
+
               <ul>
-                <li>Configuration et administration de réseaux (LAN/WAN)</li>
-                <li>Gestion des serveurs Windows et Linux</li>
-                <li>Installation et administration de VM (VirtualBox, VMware)</li>
-                <li>Supervision réseau et sécurité (firewall, VPN)</li>
-                <li>Câblage et topologies réseau</li>
+
+                <li>
+                  Configuration et administration de réseaux LAN/WAN
+                </li>
+
+                <li>
+                  Gestion des serveurs Windows et Linux
+                </li>
+
+                <li>
+                  Installation et administration de machines virtuelles
+                  avec VirtualBox et VMware
+                </li>
+
+                <li>
+                  Supervision réseau et sécurité
+                </li>
+
+                <li>
+                  Configuration de firewall et VPN
+                </li>
+
+                <li>
+                  Câblage et mise en place de topologies réseau
+                </li>
+
               </ul>
+
             </div>
+
           </div>
+
+
+          <!-- Services -->
           <div class="col-lg-6">
+
             <div class="content">
+
               <h4>Services & Déploiement</h4>
+
               <ul>
-                <li>Gestion des services réseaux (DHCP, DNS, FTP, HTTP)</li>
-                <li>Administration de postes clients</li>
-                <li>Maintenance et dépannage informatique</li>
-                <li>Gestion de parc informatique et documentation</li>
-                <li>Plan de reprise et sauvegardes (backup)</li>
+
+                <li>
+                  Gestion des services réseau DHCP, DNS, FTP et HTTP
+                </li>
+
+                <li>
+                  Administration de postes clients
+                </li>
+
+                <li>
+                  Maintenance et dépannage informatique
+                </li>
+
+                <li>
+                  Gestion de parc informatique
+                </li>
+
+                <li>
+                  Documentation technique
+                </li>
+
+                <li>
+                  Mise en place de sauvegardes
+                </li>
+
               </ul>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- CV Section -->
+
+    <!-- ==============================
+         PARCOURS
+    ============================== -->
+
     <section id="resume" class="resume section">
+
       <div class="container section-title" data-aos="fade-up">
-        <h2>CV</h2>
-        <p>Résumé de mon parcours et de mes expériences.</p>
+
+        <h2>Parcours</h2>
+
+        <p>
+          Résumé de mon parcours scolaire et de mes expériences.
+        </p>
+
       </div>
+
       <div class="container">
+
         <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Éducation -->
+          <div
+            class="col-lg-6"
+            data-aos="fade-up"
+            data-aos-delay="100">
+
             <h3>Éducation</h3>
+
             <div class="resume-item">
-              <h4>BTS SIO 1ère année</h4>
-              <h5>2025-2026</h5>
-              <p><em>Lycée Léonard De Vinci, Melun</em></p>
+
+              <h4>BTS SIO – 2ᵉ année</h4>
+
+              <h5>2026 - 2027</h5>
+
+              <p>
+                <em>
+                  Lycée Léonard De Vinci, Melun
+                </em>
+              </p>
+
+              <p>
+                Option SISR – Solutions d'Infrastructure, Systèmes et Réseaux.
+              </p>
+
             </div>
+
+
             <div class="resume-item">
-              <h4>Baccalauréat Général (Mathématiques - NSI)</h4>
-              <h5>2024-2025</h5>
-              <p><em>Institution Saint-Aspais, Melun</em></p>
+
+              <h4>BTS SIO – 1ʳᵉ année</h4>
+
+              <h5>2025 - 2026</h5>
+
+              <p>
+                <em>
+                  Lycée Léonard De Vinci, Melun
+                </em>
+              </p>
+
             </div>
+
+
+            <div class="resume-item">
+
+              <h4>Baccalauréat Général</h4>
+
+              <h5>2024 - 2025</h5>
+
+              <p>
+                <em>
+                  Institution Saint-Aspais, Melun
+                </em>
+              </p>
+
+              <p>
+                Spécialités Mathématiques et NSI.
+              </p>
+
+            </div>
+
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+
+
+          <!-- Expériences -->
+          <div
+            class="col-lg-6"
+            data-aos="fade-up"
+            data-aos-delay="200">
+
             <h3>Expériences Professionnelles</h3>
+
             <div class="resume-item">
+
               <h4>Babysitting</h4>
+
               <h5>2023 - Présent</h5>
+
               <ul>
-                <li>Garde d’enfants, organisation d’activités éducatives</li>
-                <li>Assurer la sécurité et le bien-être des enfants</li>
-                <li>Aide aux devoirs et préparation des repas</li>
-                <li>Communication avec les parents</li>
+
+                <li>
+                  Garde d’enfants et organisation d’activités éducatives
+                </li>
+
+                <li>
+                  Assurer la sécurité et le bien-être des enfants
+                </li>
+
+                <li>
+                  Aide aux devoirs et préparation des repas
+                </li>
+
+                <li>
+                  Communication avec les parents
+                </li>
+
               </ul>
+
             </div>
+
+
             <div class="resume-item">
-              <h4>Stage de 3ème</h4>
+
+              <h4>Stage de 3ᵉ</h4>
+
               <h5>2021</h5>
+
               <ul>
-                <li>Découverte du fonctionnement d’une entreprise BTP</li>
-                <li>Observation des équipes et méthodes de travail</li>
+
+                <li>
+                  Découverte du fonctionnement d’une entreprise du BTP
+                </li>
+
+                <li>
+                  Observation des équipes et des méthodes de travail
+                </li>
+
               </ul>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Acquisitions & Certifications Section -->
+
+    <!-- ==============================
+         CERTIFICATIONS
+    ============================== -->
+
     <section id="acquisitions" class="resume section">
+
       <div class="container section-title" data-aos="fade-up">
+
         <h2>Acquisitions & Certifications</h2>
-        <p>Certifications et acquis importants :</p>
+
+        <p>
+          Certifications et acquis importants.
+        </p>
+
       </div>
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+
         <div class="row gy-4">
+
           <div class="col-lg-6">
+
             <div class="resume-item">
+
               <h4>ASSR2</h4>
+
               <h5>2021</h5>
+
             </div>
+
+
             <div class="resume-item">
+
               <h4>Brevet des collèges</h4>
+
               <h5>2022</h5>
+
             </div>
+
           </div>
+
+
           <div class="col-lg-6">
+
             <div class="resume-item">
-              <h4>Baccalauréat</h4>
+
+              <h4>Baccalauréat Général</h4>
+
               <h5>2025</h5>
+
             </div>
+
+
             <div class="resume-item">
+
               <h4>Code de la route & Permis B</h4>
+
               <h5>2025</h5>
+
             </div>
+
+
             <div class="resume-item">
+
               <h4>Certification PIX</h4>
+
               <h5>2025</h5>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Contact Section -->
+
+    <!-- ==============================
+         CONTACT
+    ============================== -->
+
     <section id="contact" class="contact section">
+
       <div class="container section-title" data-aos="fade-up">
+
         <h2>Contact</h2>
-        <p>Contacter moi.</p>
+
+        <p>
+          N'hésitez pas à me contacter pour toute demande concernant
+          ma recherche de stage.
+        </p>
+
       </div>
-      <div class="container" data-aos="fade" data-aos-delay="100">
+
+      <div
+        class="container"
+        data-aos="fade"
+        data-aos-delay="100">
+
         <div class="row gy-4">
+
           <div class="col-lg-4 content">
+
             <h3>Adresse</h3>
-            <p>Le Mée-Sur-Seine, France</p>
+
+            <p>
+              Le Mée-Sur-Seine, France
+            </p>
+
             <h3>Téléphone</h3>
-            <p>0753446569</p>
+
+            <p>
+              0753446569
+            </p>
+
             <h3>Email</h3>
-            <p>Jackson77350@gmail.com</p>
+
+            <p>
+              Jackson77350@gmail.com
+            </p>
+
           </div>
+
+
           <div class="col-lg-8 content">
-            <form action="forms/contact.php" method="post" class="php-email-form">
+
+            <form
+              action="forms/contact.php"
+              method="post"
+              class="php-email-form">
+
               <div class="row gy-4">
-                <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Nom" required></div>
-                <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Email" required></div>
-                <div class="col-md-12"><input type="text" class="form-control" name="subject" placeholder="Objet" required></div>
-                <div class="col-md-12"><textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea></div>
-                <div class="col-md-12 text-center">
-                  <button type="submit">Envoyer</button>
+
+                <div class="col-md-6">
+
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    placeholder="Nom"
+                    required>
+
                 </div>
+
+
+                <div class="col-md-6">
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    placeholder="Email"
+                    required>
+
+                </div>
+
+
+                <div class="col-md-12">
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    placeholder="Objet"
+                    required>
+
+                </div>
+
+
+                <div class="col-md-12">
+
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    rows="6"
+                    placeholder="Message"
+                    required>
+                  </textarea>
+
+                </div>
+
+
+                <div class="col-md-12 text-center">
+
+                  <button type="submit">
+                    Envoyer
+                  </button>
+
+                </div>
+
               </div>
+
             </form>
+
           </div>
+
         </div>
+
       </div>
+
+    </section>
+
+
+    <!-- ==============================
+         DOCUMENTS & CV
+    ============================== -->
+
+    <section id="documents" class="documents section">
+
+      <div class="container section-title" data-aos="fade-up">
+
+        <h2>Documents & CV</h2>
+
+        <p>
+          Retrouvez ici mon CV ainsi que quelques travaux réalisés
+          durant ma formation en BTS SIO.
+        </p>
+
+      </div>
+
+
+      <div
+        class="container"
+        data-aos="fade-up"
+        data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+
+
+          <!-- CV -->
+          <div class="col-lg-4 col-md-6">
+
+            <div class="content text-center document-card">
+
+              <div class="document-icon">
+
+                <i class="bi bi-file-earmark-person"></i>
+
+              </div>
+
+              <h4>Mon CV</h4>
+
+              <p>
+                Consultez et téléchargez mon CV afin de découvrir
+                mon parcours, mes compétences et mes expériences.
+              </p>
+
+              <a
+                href="/assets/CV_Jackson.pdf"
+                target="_blank"
+                class="btn-download">
+
+                <i class="bi bi-download"></i>
+                Télécharger mon CV
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- TP Configuration réseau -->
+          <div class="col-lg-4 col-md-6">
+
+            <div class="content text-center document-card">
+
+              <div class="document-icon">
+
+                <i class="bi bi-hdd-network"></i>
+
+              </div>
+
+              <h4>TP Configuration réseau</h4>
+
+              <p>
+                Travail pratique portant sur la configuration
+                réseau d'un serveur réalisé durant ma formation.
+              </p>
+
+              <a
+                href="/assets/TP-Configuration_réseau_d'un_serveur_Jackson_Nsimba_SIO11.pdf"
+                target="_blank"
+                class="btn-download">
+
+                <i class="bi bi-file-earmark-pdf"></i>
+                Voir le TP
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- TP Clé bootable -->
+          <div class="col-lg-4 col-md-6">
+
+            <div class="content text-center document-card">
+
+              <div class="document-icon">
+
+                <i class="bi bi-usb-drive"></i>
+
+              </div>
+
+              <h4>TP Création d'une clé bootable</h4>
+
+              <p>
+                Travail pratique consacré à la création
+                et à l'utilisation d'une clé USB bootable.
+              </p>
+
+              <a
+                href="/assets/TP_création_d'une_clé_bootable.pdf"
+                target="_blank"
+                class="btn-download">
+
+                <i class="bi bi-file-earmark-pdf"></i>
+                Voir le TP
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
     </section>
 
   </main>
-  <section id="projects" class="projects section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Projets</h2>
-    <p>Vous trouverez ici mes différents projets réalisés en réseaux et systèmes.</p>
-  </div>
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="content text-center">
-          <h4>Projets Réseaux & Infrastructure</h4>
-          <p>
-            Ce dossier contient mes différents projets en réseaux :  
-            configuration de réseaux,création d'un serveur WEB,Gestion d'un réseaux avec plusieurs machines
-          </p>
-          <a href="/assets/Projet_Nsimba.zip" download class="btn-download">
-            📦 Télécharger mes projets 
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-  <!-- Footer -->
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+
   <footer>
+
     <div class="container text-center">
-      <p>Étudiant en BTS SIO, passionné par les réseaux et l’informatique.</p>
+
+      <p>
+        Étudiant en BTS SIO SISR, passionné par les réseaux,
+        les systèmes et l'informatique.
+      </p>
+
       <div class="copyright mt-2">
-        <span>&copy; 2026 Jackson Nsimba. Tous droits réservés.</span>
+
+        <span>
+          &copy; 2026 Jackson Nsimba. Tous droits réservés.
+        </span>
+
       </div>
+
     </div>
+
   </footer>
 
+
+  <!-- Scripts -->
+
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
   <script src="assets/vendor/aos/aos.js"></script>
+
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
+
   <script>
-    AOS.init({ duration: 1000, once: true });
+
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
   </script>
 
 </body>
+
 </html>
+
