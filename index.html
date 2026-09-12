@@ -165,11 +165,8 @@
     .content {
       background-color: #151515 !important;
       color: #ffffff !important;
-
       border: 1px solid #3a3a3a !important;
-
       border-radius: 10px;
-
       padding: 25px;
     }
 
@@ -223,31 +220,24 @@
 
     .skills .content {
       background-color: #151515 !important;
-
       border: 1px solid #3a3a3a !important;
-
       height: 100%;
-
       transition: 0.3s ease;
     }
 
     .skills .content:hover {
       background-color: #202020 !important;
-
       border-color: #555555 !important;
-
       transform: translateY(-5px);
     }
 
     .skills h4 {
       color: #ffffff !important;
-
       font-weight: 700;
     }
 
     .skills li {
       color: #ffffff !important;
-
       margin-bottom: 8px;
     }
 
@@ -257,25 +247,17 @@
 
     .resume-item {
       background-color: #151515 !important;
-
       color: #ffffff !important;
-
       border: 1px solid #3a3a3a !important;
-
       border-radius: 10px;
-
       padding: 25px;
-
       margin-bottom: 20px;
-
       transition: 0.3s ease;
     }
 
     .resume-item:hover {
       background-color: #202020 !important;
-
       border-color: #555555 !important;
-
       transform: translateY(-3px);
     }
 
@@ -316,12 +298,233 @@
     }
 
     /* =====================================================
+       RAPPORT DE STAGE BTS SIO
+    ===================================================== */
+
+    .rapport-stage {
+      background-color: #000000 !important;
+    }
+
+    .rapport-card {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      background: linear-gradient(
+        145deg,
+        #151515,
+        #101010
+      ) !important;
+
+      border: 1px solid #3a3a3a !important;
+
+      border-radius: 16px;
+
+      padding: 35px;
+
+      overflow: hidden;
+
+      transition: all 0.35s ease;
+    }
+
+    .rapport-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 4px;
+      height: 100%;
+
+      background-color: #2563eb;
+    }
+
+    .rapport-card:hover {
+      transform: translateY(-6px);
+
+      background-color: #202020 !important;
+
+      border-color: #555555 !important;
+
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    /* =====================================================
+       ICÔNE RAPPORT
+    ===================================================== */
+
+    .rapport-icon {
+      min-width: 85px;
+      height: 85px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: #222222;
+
+      border: 1px solid #444444;
+
+      border-radius: 15px;
+
+      font-size: 38px;
+
+      color: #60a5fa !important;
+    }
+
+    .rapport-icon i {
+      color: #60a5fa !important;
+    }
+
+    /* =====================================================
+       CONTENU RAPPORT
+    ===================================================== */
+
+    .rapport-content {
+      flex: 1;
+    }
+
+    .rapport-label {
+      display: inline-block;
+
+      color: #60a5fa !important;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 8px;
+    }
+
+    .rapport-content h3 {
+      color: #ffffff !important;
+
+      font-size: 28px;
+
+      font-weight: 700;
+
+      margin-bottom: 12px;
+    }
+
+    .rapport-content p {
+      color: #ffffff !important;
+
+      line-height: 1.7;
+
+      margin-bottom: 20px;
+    }
+
+    /* =====================================================
+       INFORMATIONS RAPPORT
+    ===================================================== */
+
+    .rapport-infos {
+      display: flex;
+
+      gap: 25px;
+
+      margin-bottom: 25px;
+    }
+
+    .rapport-infos div {
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+    }
+
+    .rapport-infos i {
+      color: #60a5fa !important;
+
+      font-size: 18px;
+    }
+
+    .rapport-infos span {
+      color: #ffffff !important;
+
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       BOUTONS RAPPORT
+    ===================================================== */
+
+    .rapport-buttons {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .btn-rapport,
+    .btn-rapport-secondary {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 12px 20px;
+
+      border-radius: 8px;
+
+      font-weight: 700;
+
+      transition: all 0.3s ease;
+    }
+
+    .btn-rapport {
+      background-color: #2563eb !important;
+
+      color: #ffffff !important;
+    }
+
+    .btn-rapport:hover {
+      background-color: #1d4ed8 !important;
+
+      color: #ffffff !important;
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-rapport-secondary {
+      background-color: #222222 !important;
+
+      border: 1px solid #555555;
+
+      color: #ffffff !important;
+    }
+
+    .btn-rapport-secondary:hover {
+      background-color: #333333 !important;
+
+      border-color: #60a5fa;
+
+      color: #ffffff !important;
+
+      transform: translateY(-2px);
+    }
+
+    /* =====================================================
        CONTACT
     ===================================================== */
 
     .contact .content {
       background-color: #151515 !important;
-
       color: #ffffff !important;
     }
 
@@ -609,11 +812,51 @@
         margin-bottom: 15px;
       }
 
+      .rapport-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 25px;
+      }
+
+      .rapport-icon {
+        min-width: 70px;
+
+        width: 70px;
+
+        height: 70px;
+
+        font-size: 30px;
+      }
+
+      .rapport-content h3 {
+        font-size: 24px;
+      }
+
+      .rapport-infos {
+        flex-direction: column;
+
+        gap: 10px;
+      }
+
+      .rapport-buttons {
+        flex-direction: column;
+
+        width: 100%;
+      }
+
+      .btn-rapport,
+      .btn-rapport-secondary {
+        width: 100%;
+      }
+
     }
 
   </style>
 
 </head>
+
 
 <body>
 
@@ -659,6 +902,13 @@
           </a>
         </li>
 
+        <!-- NOUVEAU -->
+        <li>
+          <a href="#rapport-stage">
+            <span>Rapport de stage</span>
+          </a>
+        </li>
+
         <li>
           <a href="#documents">
             <span>Documents</span>
@@ -677,7 +927,9 @@
 
   </header>
 
+
   <main class="main">
+
 
     <!-- =====================================================
          HERO
@@ -885,6 +1137,7 @@
 
         <div class="row gy-4">
 
+
           <!-- RÉSEAU -->
 
           <div class="col-lg-6">
@@ -1003,6 +1256,7 @@
       <div class="container">
 
         <div class="row">
+
 
           <!-- ÉDUCATION -->
 
@@ -1236,6 +1490,7 @@
 
         <div class="row gy-4">
 
+
           <div class="col-lg-6">
 
             <div class="resume-item">
@@ -1316,6 +1571,157 @@
 
 
     <!-- =====================================================
+         RAPPORT DE STAGE BTS SIO
+    ===================================================== -->
+
+    <section id="rapport-stage" class="rapport-stage section">
+
+      <div
+        class="container section-title"
+        data-aos="fade-up"
+      >
+
+        <h2>
+          Rapport de stage BTS SIO
+        </h2>
+
+        <p>
+          Découvrez mon compte rendu de stage réalisé dans le cadre
+          de ma formation en BTS SIO SISR.
+        </p>
+
+      </div>
+
+
+      <div
+        class="container"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-9">
+
+            <div class="rapport-card">
+
+
+              <!-- ICÔNE -->
+
+              <div class="rapport-icon">
+
+                <i class="bi bi-journal-text"></i>
+
+              </div>
+
+
+              <!-- CONTENU -->
+
+              <div class="rapport-content">
+
+                <span class="rapport-label">
+                  BTS SIO • Option SISR
+                </span>
+
+                <h3>
+                  Compte rendu de stage
+                </h3>
+
+                <p>
+
+                  Ce rapport présente les différentes missions
+                  réalisées durant mon stage, les compétences
+                  mobilisées ainsi que les travaux effectués dans
+                  le domaine des systèmes, réseaux et de
+                  l'informatique.
+
+                </p>
+
+
+                <!-- INFORMATIONS -->
+
+                <div class="rapport-infos">
+
+                  <div>
+
+                    <i class="bi bi-file-earmark-pdf"></i>
+
+                    <span>
+                      Format PDF
+                    </span>
+
+                  </div>
+
+
+                  <div>
+
+                    <i class="bi bi-mortarboard"></i>
+
+                    <span>
+                      BTS SIO SISR
+                    </span>
+
+                  </div>
+
+
+                  <div>
+
+                    <i class="bi bi-building"></i>
+
+                    <span>
+                      Stage professionnel
+                    </span>
+
+                  </div>
+
+                </div>
+
+
+                <!-- BOUTONS -->
+
+                <div class="rapport-buttons">
+
+                  <a
+                    href="assets/Compte_rendu_stage_Jackson_Nsimba1.pdf"
+                    target="_blank"
+                    class="btn-rapport"
+                  >
+
+                    <i class="bi bi-eye"></i>
+
+                    Consulter le rapport
+
+                  </a>
+
+
+                  <a
+                    href="assets/Compte_rendu_stage_Jackson_Nsimba1.pdf"
+                    download
+                    class="btn-rapport-secondary"
+                  >
+
+                    <i class="bi bi-download"></i>
+
+                    Télécharger
+
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
          CONTACT
     ===================================================== -->
 
@@ -1331,8 +1737,10 @@
         </h2>
 
         <p>
+
           N'hésitez pas à me contacter pour toute demande
           concernant ma recherche de stage.
+
         </p>
 
       </div>
@@ -1345,6 +1753,7 @@
       >
 
         <div class="row gy-4">
+
 
           <div class="col-lg-4 content">
 
@@ -1386,6 +1795,7 @@
             >
 
               <div class="row gy-4">
+
 
                 <div class="col-md-6">
 
@@ -1442,7 +1852,9 @@
                 <div class="col-md-12 text-center">
 
                   <button type="submit">
+
                     Envoyer
+
                   </button>
 
                 </div>
@@ -1476,8 +1888,10 @@
         </h2>
 
         <p>
+
           Retrouvez ici mon CV ainsi que quelques travaux
           réalisés durant ma formation en BTS SIO SISR.
+
         </p>
 
       </div>
@@ -1520,7 +1934,7 @@
 
 
               <a
-                href="/assets/CV_Jackson.pdf"
+                href="assets/CV_Jackson.pdf"
                 target="_blank"
                 download
                 class="btn-download"
@@ -1565,7 +1979,7 @@
 
 
               <a
-                href="/assets/TP-Configuration_réseau_d'un_serveur_Jackson_Nsimba_SIO11.pdf"
+                href="assets/TP-Configuration_réseau_d'un_serveur_Jackson_Nsimba_SIO11.pdf"
                 target="_blank"
                 class="btn-download"
               >
@@ -1608,7 +2022,7 @@
 
 
               <a
-                href="/assets/TP_création_d'une_clé_bootable.pdf"
+                href="assets/TP_création_d'une_clé_bootable.pdf"
                 target="_blank"
                 class="btn-download"
               >
@@ -1652,7 +2066,9 @@
       <div class="copyright mt-2">
 
         <span>
+
           &copy; 2026 Jackson Nsimba. Tous droits réservés.
+
         </span>
 
       </div>
@@ -1682,8 +2098,8 @@
 
   </script>
 
+
 </body>
 
 </html>
-
 
